@@ -1,0 +1,94 @@
+@import url("fonts.css");
+
+:root {
+  --bg: #FBF8F3;
+  --ink: #16202A;
+  --soft: #5A6873;
+  --line: rgba(22, 32, 42, 0.14);
+  --link: #0B6F84;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11161B;
+    --ink: #ECE7E0;
+    --soft: #9BA8B3;
+    --line: rgba(236, 231, 224, 0.16);
+    --link: #63C6DC;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.page {
+  max-width: 620px;
+  margin-inline: auto;
+  padding: 56px 24px 40px;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--link); text-underline-offset: 3px; }
+
+h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 4px; letter-spacing: -0.015em; }
+h2 { font-size: 1rem; margin: 0 0 8px; letter-spacing: -0.005em; }
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+
+header { margin-bottom: 48px; }
+.wordmark { font-weight: 600; font-size: 1.05rem; margin: 0; }
+.wordmark a { color: var(--ink); text-decoration: none; }
+
+.intro { font-size: 1.2rem; line-height: 1.5; margin-bottom: 44px; }
+
+main section { padding-top: 32px; margin-top: 32px; border-top: 1px solid var(--line); }
+main section:first-of-type { padding-top: 0; margin-top: 0; border-top: 0; }
+
+.app { display: flex; gap: 20px; align-items: flex-start; }
+.app img { width: 72px; height: 72px; border-radius: 16px; flex: none; }
+.sub { color: var(--soft); margin-bottom: 14px; }
+.status { color: var(--soft); }
+
+.links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+
+.email { font-size: 1.15rem; font-weight: 500; }
+
+.note { color: var(--soft); font-size: 0.95rem; }
+
+dl { margin: 0; }
+dt { font-weight: 600; margin-top: 18px; }
+dt:first-child { margin-top: 0; }
+dd { margin: 4px 0 0; color: var(--soft); }
+
+footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--soft);
+}
+
+@media (max-width: 480px) {
+  .page { padding-top: 40px; }
+  .app { flex-direction: column; gap: 16px; }
+}
+
+/* Long-form pages (the privacy policy). */
+.prose { max-width: 60ch; }
+.prose h1 { margin-bottom: 8px; }
+.prose h2 { font-size: 1.05rem; margin: 34px 0 8px; }
+.prose .note { margin-bottom: 28px; }
+.prose .intro { font-size: 1.05rem; margin-bottom: 8px; }
+.prose ul { margin: 0 0 14px; padding-left: 20px; }
+.prose li { margin-bottom: 10px; }
